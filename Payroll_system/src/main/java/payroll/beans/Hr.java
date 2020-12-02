@@ -16,7 +16,7 @@ public class Hr {
 	private String lname;
 	
 	/**
-	 * Making a new HR without an offial date hired
+	 * Making a new HR without an official date hired
 	 * @param id
 	 * @param man_deparment
 	 * @param fname
