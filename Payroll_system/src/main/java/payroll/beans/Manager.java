@@ -30,7 +30,6 @@ public class Manager {
 	 * @param lastName
 	 */
 	public Manager(int id, String position, String salary, int managerDepartment, String firstName, String lastName) {
-		super();
 		this.idManager = id;
 		this.position = position;
 		this.salary = salary;
@@ -52,7 +51,6 @@ public class Manager {
 	 * @param lastName
 	 */
 	public Manager(int id, String position, String salary, LocalDate dateHired, int managerDepartment, String firstName, String lastName) {
-		super();
 		this.idManager = id;
 		this.position = position;
 		this.salary = salary;
