@@ -2,10 +2,12 @@ package payroll.beans;
 
 import java.time.LocalDate;
 
+import javax.persistence.Convert;
 import javax.persistence.Embeddable;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import payroll.controller.LocalDateAttributeConverter;
 
 @Embeddable
 @Data
@@ -15,6 +17,7 @@ public class Employees {
 	private int idEmployees;
 	private String position;
 	private String salary;
+	@Convert(converter=LocalDateAttributeConverter.class)
 	private LocalDate dateHired;
 	private int empDepartment;
 	private String firstName;
