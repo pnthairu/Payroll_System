@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hiring Manager</title>
+</head>
+<style>	
+	
+	div#container	{
+	width:850px;
+	height: 590px;
+	margin:auto;
+	padding:10px;
+	background-color:#C99;	
+	border:thin solid black;
+	font-color: blue;
+	}	
+	h4 {text-align: center;}
+	
+	h3 {text-align: center;
+		color: brown;
+		font-weight: bold;
+		font-size: 30px;}
+	
+	label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
+</style>	
+<body>
+<div id = "container">
+
+<form id = "form1" name="form1" th:object="${newEmployees}" th:action="@{/update/{id}(id=${newEmployees.idEmployees})}" method=POST>
+<h3> HIRING MANAGER ADD NEW EMPLOYEE FORM</h3>
+
+  <p>
+	<label for="position">Position: 
+		<input type="text" name = "position" id = "position" size ="20" th:field="*{position}"/>
+	</label>
+  </p>
+  
+  <p>
+	<label for="salary">Salary: 
+		<input type="text" name = "salary" id = "salary" size ="20" th:field="*{salary}"/>
+	</label>
+  </p>
+  
+  <p>
+	<label for="dateHired">Date Hired: 
+		<input type="text" name = "dateHired" id = "dateHired" size ="20" th:field="*{dateHired}"/>
+	</label>
+  </p>
+  
+  <p>
+	<label for="empDepartment">Department: 
+		<input type="text" name = "empDepartment" id = "empDepartment" size ="20" th:field="*{empDepartment}"/>
+	</label>
+  </p>
+  
+  <p>
+	<label for="firstName">First Name:
+		<input type="text" name = "firstName" id = "firstName" size ="20" th:field="*{firstName}"/>
+	</label>
+  </p>
+  
+  <p>
+	<label for="lastName">Last Name: 
+		<input type="text" name = "lastName" id = "lastName" size ="20" th:field="*{lastName}"/>
+	</label>
+  </p>
+  
+   
+<p>
+	<input name="Submit" type="submit" value="submit" style="font-size:18px;"/>
+</p>
+</form>
+<p>
+<a href="../viewAllEmployees">View All Employees</a>
+</P>
+<P>
+<a href="../AddNewEmployee">Add New Employee</a>
+</P>
+<P>
+<a href="../searchEmployee">Search for Employee</a>
+</p>
+</div>
+</body>
+</html>
