@@ -4,9 +4,53 @@
 <meta charset="ISO-8859-1">
 <title>Hiring Manager</title>
 </head>
+<style>	
+	
+	div#container	{
+	width:850px;
+	height: 590px;
+	margin:auto;
+	padding:10px;
+	background-color:#C99;	
+	border:thin solid black;
+	font-color: blue;
+	text-align: center;
+	}	
+	h4 {text-align: center;}
+	
+	h3 {text-align: center;
+		color: brown;
+		font-weight: bold;
+		font-size: 30px;}
+	
+	label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
+</style>	
 <body>
-		<a>Add Employee</a>
-		<a>View all Employees</a>
-		<a>Search for Employee by ID</a>
+<div id = "container">
+<h3> WELCOME TO HIRING MANAGER HOME PAGE</h3>
+<p>
+<a a href="viewAllEmployees">View All Employees</a><br>
+</p>
+<p>
+<a href="inputEmployees">Add New Employee</a><br>
+</p>
+<p>
+<a href="../searchEmployee">Search for Employee</a>
+</p>
+</div>
 </body>
 </html>

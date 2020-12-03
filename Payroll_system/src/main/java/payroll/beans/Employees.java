@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 import javax.persistence.Convert;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,9 +16,12 @@ import payroll.controller.LocalDateAttributeConverter;
 @Embeddable
 @Data
 @NoArgsConstructor
+@Entity
 public class Employees {
 
-	private int idEmployees;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idEmployees;
 	private String position;
 	private String salary;
 	@Convert(converter=LocalDateAttributeConverter.class)
@@ -33,9 +40,9 @@ public class Employees {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Employees(int id, String position, String salary, int empDepartment, String firstName,
+	public Employees(Long idEmployees, String position, String salary, int empDepartment, String firstName,
 			String lastName) {
-		this.idEmployees = id;
+		this.idEmployees = idEmployees;
 		this.position = position;
 		this.salary = salary;
 		this.empDepartment = empDepartment;
@@ -55,9 +62,9 @@ public class Employees {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Employees(int id, String position, String salary, LocalDate dateHired, int empDepartment,
+	public Employees(Long idEmployees, String position, String salary, LocalDate dateHired, int empDepartment,
 			String firstName, String lastName) {
-		this.idEmployees = id;
+		this.idEmployees = idEmployees;
 		this.position = position;
 		this.salary = salary;
 		this.dateHired = dateHired;
