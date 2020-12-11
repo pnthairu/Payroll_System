@@ -21,7 +21,7 @@ public class Employees {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEmployees;
+	private Long id;
 	private String position;
 	private String salary;
 	@Convert(converter=LocalDateAttributeConverter.class)
@@ -42,7 +42,7 @@ public class Employees {
 	 */
 	public Employees(Long idEmployees, String position, String salary, int empDepartment, String firstName,
 			String lastName) {
-		this.idEmployees = idEmployees;
+		this.id = idEmployees;
 		this.position = position;
 		this.salary = salary;
 		this.empDepartment = empDepartment;
@@ -64,7 +64,7 @@ public class Employees {
 	 */
 	public Employees(Long idEmployees, String position, String salary, LocalDate dateHired, int empDepartment,
 			String firstName, String lastName) {
-		this.idEmployees = idEmployees;
+		this.id = idEmployees;
 		this.position = position;
 		this.salary = salary;
 		this.dateHired = dateHired;

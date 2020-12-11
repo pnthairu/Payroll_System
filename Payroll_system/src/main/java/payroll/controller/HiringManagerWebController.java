@@ -8,21 +8,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import payroll.beans.Employees;
-import payroll.repository.HiringManagerRepository;
+import payroll.repository.EmployeeRepository;
 
 
 @Controller
 public class HiringManagerWebController {
 	
 	@Autowired
-	HiringManagerRepository repo;
+	EmployeeRepository repo;
 	
-	@GetMapping({ "/", "viewAllEmployees" })
+	@GetMapping("viewAllEmployees")
 	public String viewAllEmployees(Model model) {
-		if(repo.findAll().isEmpty()) {
-			return addNewEmployees(model);
-		}
-		
 		model.addAttribute("employees", repo.findAll());
 		return "HiringManager";
 	}
