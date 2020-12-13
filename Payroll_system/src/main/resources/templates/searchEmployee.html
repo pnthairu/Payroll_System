@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+</head>
+<body>
+	<form th:action="@{/searchById}" method=POST>
+		Employee Id: 		  <input name="id"  id="id" size="20" th:value="${id}" required><br /> 
+		<input name="Submit" type="submit" value="submit"/>
+	</form>
+	
+	<form th:action="@{/searchByLastName}" method=POST>
+		Last Name: 		  <input name="lastName"  size="20" th:value="${lastName}" required><br /> 
+		<input name="Submit" type="submit" value="submit"/>
+	</form>
+</body>
+</html>

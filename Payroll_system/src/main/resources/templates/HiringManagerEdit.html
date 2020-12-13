@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>HR View</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentEmp :  ${employees}" >
+				<td th:text="${currentEmp.id}" />
+				<td th:text="${currentEmp.firstName}" />
+				<td th:text="${currentEmp.lastName}" />
+				<td th:text="${currentEmp.position}" />
+				<td th:text="${currentEmp.empDepartment}" />
+				<td th:text="${currentEmp.salary}" />
+				<td th:text="${currentEmp.dateHired}" />
+				<td th:text="${currentEmp.hours}" />
+				<td><a th:href="@{/edit/{id}(id=${currentEmp.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentEmp.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>	
+</body>
+</html>

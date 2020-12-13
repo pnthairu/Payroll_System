@@ -45,7 +45,6 @@ input {
 </style>
 <body>
 <form>
-test
 		<table>
 			<tr th:each="currentEmployee : ${employees}">
 				<td th:text="${currentEmployee.id}" />
@@ -62,7 +61,7 @@ test
 			<a href="inputEmployees">Add New Employee</a><br>
 		</p>
 		<p>
-			<a href="../searchEmployee">Search for Employee</a>
+			<a href="searchEmployee">Search for Employee</a>
 		</p>
 	</div>
 </body>

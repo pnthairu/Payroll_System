@@ -3,6 +3,10 @@ package payroll.beans;
 import java.time.LocalDate;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +14,11 @@ import lombok.NoArgsConstructor;
 @Embeddable
 @Data
 @NoArgsConstructor
+@Entity
 public class Manager {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idManager;
 	private String position;
 	private String salary;
