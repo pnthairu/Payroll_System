@@ -17,7 +17,6 @@
 				<td th:text="${currentEmp.dateHired}" />
 				<td th:text="${currentEmp.hours}" />
 				<td><a th:href="@{/managerUpdateEmployee/{id}(id=${currentEmp.id})}">Edit</a></td>
-				<td><a th:href="@{/delete/{id}(id=${currentEmp.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>	

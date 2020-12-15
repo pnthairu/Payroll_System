@@ -5,9 +5,13 @@
 <title>Manager</title>
 </head>
 <body>
-	<form th:action="@{/searchByDepartment}" method=POST>
-		Department ID: 		  <input name="department"  id="department" size="20" th:value="${department}" required><br /> 
-		<input name="Submit" type="submit" value="submit"/>
-	</form>
+	<form>
+		<table>
+			<tr th:each="currentDepartment :  ${departments}" >
+				<td th:text="${currentDepartment.name}" />
+				<td><a th:href="@{/searchByDepartment/{id}(id=${currentDepartment.idDepartments})}">Edit</a></td>
+			</tr>
+		</table>
+	</form>	
 </body>
 </html>

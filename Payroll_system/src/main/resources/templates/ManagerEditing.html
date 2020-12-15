@@ -1,47 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Hiring Manager</title>
-</head>
-<style>
-div#container {
-	width: 850px;
-	height: 590px;
-	margin: auto;
-	padding: 10px;
-	background-color: #C99;
-	border: thin solid black;
-	font-color: blue;
-}
-
-h4 {
-	text-align: center;
-}
-
-h3 {
-	text-align: center;
-	color: brown;
-	font-weight: bold;
-	font-size: 30px;
-}
-
-label {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	text-align: right;
-	width: 400px;
-	line-height: 26px;
-	margin-bottom: 10px;
-}
-
-input {
-	height: 20px;
-	flex: 0 0 200px;
-	margin-left: 10px;
-}
-</style>
 <script>
 	function calcEmpPaycheck(){
 		let hours = parseFloat(document.getElementById("hours").value);
@@ -50,13 +9,13 @@ input {
 		document.getElementById("calculatedPay").innerHTML = calculatedPay;
 	}
 </script>
-
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
 <body>
-	<div id="container">
-
-		<form id="form1" th:object="${newEmployees}"
-			th:action="@{/update/{id}(id=${newEmployees.id})}" method=POST>
-			<h3>HIRING MANAGER ADD NEW EMPLOYEE FORM</h3>
+	<form id="form1" th:object="${employees}" th:action="@{/managerUpdateEmp/{id}(id=${employees.id})}"
+			 method=POST>
+			<h1>Manager</h1>
 
 			<p>
 				<label for="position">Position: <input type="text"
@@ -65,13 +24,13 @@ input {
 			</p>
 
 			<p>
-				<label for="salary">Salary: <input type="text" name="salary"
+				<label for="salary">Salary: <input type="text" READONLY name="salary"
 					id="salary" size="20" th:field="*{salary}" />
 				</label>
 			</p>
 
 			<p>
-				<label for="dateHired">Date Hired: <input type="text"
+				<label for="dateHired">Date Hired: <input type="text" READONLY
 					name="dateHired" id="dateHired" size="20" th:field="*{dateHired}" />
 				</label>
 			</p>
@@ -84,45 +43,34 @@ input {
 			</p>
 
 			<p>
-				<label for="firstName">First Name: <input type="text"
+				<label for="firstName">First Name: <input type="text" READONLY
 					name="firstName" id="firstName" size="20" th:field="*{firstName}" />
 				</label>
 			</p>
 
 			<p>
-				<label for="lastName">Last Name: <input type="text"
+				<label for="lastName">Last Name: <input type="text" READONLY
 					name="lastName" id="lastName" size="20" th:field="*{lastName}" />
 				</label>
 			</p>
 			
 			<p>
-				<label for="hours">Hours: <input type="text"
+				<label for="hours">Hours: <input type="text" READONLY
 					name="hours" id="hours" size="20" th:field="*{hours}" />
 				</label>
 			</p>
-				
+			
 			<p>
 				<button type="button" onclick="calcEmpPaycheck()">Calculated Paycheck</button> 
 				
 			</p>
 			
 			<p><span id="calculatedPay"></span></p>
-				
 
 			<p>
 				<input name="submit" type="submit" value="Submit"
 					style="font-size: 18px;" />
 			</p>
 		</form>
-		<p>
-			<a href="../viewAllEmployees">View All Employees</a>
-		</P>
-		<P>
-			<a href="../inputEmployees">Add New Employee</a>
-		</P>
-		<P>
-			<a href="../searchEmployee">Search for Employee</a>
-		</p>
-	</div>
 </body>
 </html>

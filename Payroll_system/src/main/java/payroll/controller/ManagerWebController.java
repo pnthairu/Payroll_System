@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import payroll.beans.Employees;
+import payroll.repository.DepartmentsRepository;
 import payroll.repository.EmployeeRepository;
 
 
@@ -20,27 +21,40 @@ public class ManagerWebController {
 	@Autowired
 	EmployeeRepository repo;
 	
+	@Autowired
+	DepartmentsRepository drepo;
+	
 	@GetMapping("managerView")
 	public String managerView(Model model) {
+		model.addAttribute("departments", drepo.findAll());
 		return "Manager";
 	}
 	
-	@PostMapping("searchByDepartment")
-	public String searchByDepartment(@Param("department") int department, Model model) {
-		model.addAttribute("employees", repo.searchByDepartment(department));
+	
+	@GetMapping("/searchByDepartment/{id}")
+	public String searchByDepartment(@PathVariable("id") int id, Model model) {
+		model.addAttribute("employees", repo.searchByDepartment(id));
 		return "DepartmentByEmployees";
 	}
 	
-	@GetMapping("/managerEdit/{id}")
-	public String managerEdit(@PathVariable("id") long id, Model model) {
-		Employees c = repo.findById(id).orElse(null);
-		model.addAttribute("newEmployees", c);
+	/*
+	@PostMapping("searchByDepartment")
+	public String searchByLastName(@Param("lastName") String lastName, Model model) {
+		model.addAttribute("employees", repo.searchByDepartment(department));
 		return "DepartmentByEmployees";
 	}
+	**/
 
-	@PostMapping("/managerUpdateEmployee/{id}")
-	public String managerUpdateEmployee(Employees c, Model model) {
-		repo.save(c);
+	@GetMapping("/managerUpdateEmployee/{id}")
+	public String managerUpdateEmployee(@PathVariable("id") long id, Model model) {
+		Employees c = repo.findById(id).orElse(null);
+		model.addAttribute("employees", c);
 		return "ManagerEditing";
+	}
+	
+	@PostMapping("/managerUpdateEmp/{id}")
+	public String managerUpdateEmp(Employees c, Model model) {
+		repo.save(c);
+		return managerView(model);
 	}
 }
