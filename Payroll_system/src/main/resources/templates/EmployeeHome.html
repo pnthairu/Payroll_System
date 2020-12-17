@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Employee Home</title>
+	<meta charset="ISO-8859-1">
+	<title>Employee Home</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
+<script>
+	function calcEmpPaycheck(){
+		let hours = parseFloat(document.getElementById("hours").value);
+		if(isNaN(hours)){
+			alert("Employee must have hours to calculate pay.");
+			return;
+		}
+		let salary = parseFloat(document.getElementById("salary").value);
+		let calculatedPay = hours * salary;
+		document.getElementById("calculatedPay").innerHTML = calculatedPay;
+	}
+</script>
+
 <body>
-	<form th:action="@{/searchByEmpId}" method=POST>
+	<div id="containerform">
+	<h1>Enter Employee ID</h1>
+	<form th:action="@{/empSearchByID}" method=POST>
 		Employee Id: 		  <input name="id"  id="id" size="20" th:value="${id}" required><br /> 
 		<input name="Submit" type="submit" value="submit"/>
 	</form>
+	
+	<form id="form1" th:object="${newEmployees}" th:action="@{/empSearchByID}">
+			<h1>Employee Details</h1>
+
+			<p>
+				<label for="position">Position: <input type="text" READONLY
+					name="position" id="position" size="20" th:field="*{position}" />
+				</label>
+			</p>
+
+			<p>
+				<label for="salary">Salary: <input type="text" READONLY name="salary"
+					id="salary" size="20" th:field="*{salary}" />
+				</label>
+			</p>
+
+			<p>
+				<label for="dateHired">Date Hired: <input type="text" READONLY
+					name="dateHired" id="dateHired" size="20" th:field="*{dateHired}" />
+				</label>
+			</p>
+
+			<p>
+				<label for="empDepartment">Department: <input type="text" READONLY
+					name="empDepartment" id="empDepartment" size="20"
+					th:field="*{empDepartment}" />
+				</label>
+			</p>
+
+			<p>
+				<label for="firstName">First Name: <input type="text" READONLY
+					name="firstName" id="firstName" size="20" th:field="*{firstName}" />
+				</label>
+			</p>
+
+			<p>
+				<label for="lastName">Last Name: <input type="text" READONLY
+					name="lastName" id="lastName" size="20" th:field="*{lastName}" />
+				</label>
+			</p>
+			
+			<p>
+				<label for="hours">Hours: <input type="text" READONLY
+					name="hours" id="hours" size="20" th:field="*{hours}" />
+				</label>
+			</p>
+			
+			<p>
+				<button type="button" onclick="calcEmpPaycheck()">Calculated Paycheck</button> 
+				
+			</p>
+			
+			<p><span id="calculatedPay"></span></p>
+
+		</form>
+	</div>
 </body>
 </html>

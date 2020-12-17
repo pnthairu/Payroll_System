@@ -36,14 +36,6 @@ public class ManagerWebController {
 		model.addAttribute("employees", repo.searchByDepartment(id));
 		return "DepartmentByEmployees";
 	}
-	
-	/*
-	@PostMapping("searchByDepartment")
-	public String searchByLastName(@Param("lastName") String lastName, Model model) {
-		model.addAttribute("employees", repo.searchByDepartment(department));
-		return "DepartmentByEmployees";
-	}
-	**/
 
 	@GetMapping("/managerUpdateEmployee/{id}")
 	public String managerUpdateEmployee(@PathVariable("id") long id, Model model) {

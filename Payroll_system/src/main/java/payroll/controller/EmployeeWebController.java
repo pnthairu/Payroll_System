@@ -5,6 +5,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import payroll.beans.Employees;
@@ -18,19 +19,20 @@ public class EmployeeWebController {
 	
 	@GetMapping("employeeView")
 	public String employeeView(Model model) {
-		return "EmployeeHome";
-	}
-	
-	@GetMapping("/searchByEmpId{id}")
-	public String searchByEmpId(@Param("id") long id, Model model) {
-		Employees c = repo.findById(id).orElse(null);
+		Employees c = new Employees();
 		model.addAttribute("newEmployees", c);
 		return "EmployeeHome";
 	}
 	
-	@PostMapping("/searchByEmpId{id}")
-	public String searchByEmpId(Employees c, Model model) {
-		model.addAttribute("newEmployees", c);
+	@GetMapping("/empSearchByID{id}")
+	public String searchByEmpId(Model model) {
 		return "EmployeeHome";
+		
+	}
+	
+	@PostMapping("/empSearchByID{id}")
+	public String searchByEmpId(@ModelAttribute("newEmployees") Employees a, @Param("id") long id, Model model) {
+		a = repo.findById(id).orElse(null);
+		return searchByEmpId(model.addAttribute("newEmployees", a));
 	}
 }

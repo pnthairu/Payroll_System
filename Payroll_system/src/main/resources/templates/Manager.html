@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Manager</title>
+	<meta charset="ISO-8859-1">
+	<title>Manager</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	<div id="header">
+		<h1>
+			SELECT EMPLOYEES BY DEPARTMENT
+		</h1>
+	</div>
 	<form>
 		<table>
+		<tr>
+			<th>Department</th>
+			<th></th>
+		</tr>
 			<tr th:each="currentDepartment :  ${departments}" >
 				<td th:text="${currentDepartment.name}" />
-				<td><a th:href="@{/searchByDepartment/{id}(id=${currentDepartment.idDepartments})}">Edit</a></td>
+				<td><a th:href="@{/searchByDepartment/{id}(id=${currentDepartment.idDepartments})}">Select</a></td>
 			</tr>
 		</table>
 	</form>	

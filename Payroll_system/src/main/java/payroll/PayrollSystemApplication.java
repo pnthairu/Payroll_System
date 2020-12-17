@@ -11,9 +11,4 @@ public class PayrollSystemApplication {
 		SpringApplication.run(PayrollSystemApplication.class, args);
 	}
 	
-	//@Autowired
-	//PayrollRepository repo;
-	
-	
-
 }

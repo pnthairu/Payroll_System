@@ -24,7 +24,7 @@ public class Employees {
 	private String salary;
 	@Convert(converter=LocalDateAttributeConverter.class)
 	private LocalDate dateHired;
-	private int empDepartment;
+	private String empDepartment;
 	private String firstName;
 	private String lastName;
 	private String hours;

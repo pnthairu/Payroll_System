@@ -1,0 +1,138 @@
+html {
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+padding: 0;
+}
+
+a.button {
+-webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
+
+text-decoration: none;
+color: initial;
+}
+
+body {
+color: #292929;
+font: 90% Roboto, Arial, sans-serif;
+font-weight: 300;
+}
+
+p {
+padding: 0 10px;
+line-height: 1.8;
+}
+
+ul li {
+padding-right: 10px;
+line-height: 1.6;
+}
+
+h3 {
+padding: 5px 20px;
+margin: 0;
+}
+
+div#header {
+position: relative;
+float: center;
+}
+
+div#header h1 {
+height: 80px;
+line-height: 80px;
+margin: 0;
+padding-left: 10px;
+background: #e0e0e0;
+color: #292929;
+text-align: center;
+}
+
+div#header a {
+position: absolute;
+right: 0;
+top: 23px;
+padding: 10px;
+color: #006;
+
+}
+
+div#navigation {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+div#navigation li {
+list-style: none;
+}
+
+div#extra {
+background: #147FA9;
+}
+
+div#footer {
+background: #42444e;
+color: #fff;
+}
+
+div#footer p {
+padding: 20px 10px;
+}
+
+div#containermain {
+width: 700px;
+margin: 0 auto;
+}
+
+
+div#extra {
+float: right;
+width: 350px;
+}
+
+div#footer {
+clear: both;
+width: 100%;
+}
+
+div#containerform {
+width: 850px;
+height: auto;
+margin: auto;
+text-align:center;
+padding: 10px;
+background-color: pink;
+border: thin solid black;
+text-emphasis-color: blue;
+}
+
+label {
+display: grid;
+justify-items: center;
+width: auto;
+line-height: 26px;
+margin-bottom: 10px;
+}
+
+input {
+height: 20px;
+flex: 0 0 200px;
+margin-left: 10px;
+}
+
+table, th, td {  
+    border: 1px solid black;  
+    border-collapse: collapse;  
+}  
+th, td {  
+    padding: 10px;  
+}
+
+table{
+	margin:auto;
+}

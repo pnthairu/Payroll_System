@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<title>Employees</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <form>
 		<table>
+			<tr>
+				<th>Employee ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Position</th>
+				<th>Department</th>
+				<th>Pay Per Hour</th>
+				<th>Date Hired</th>
+				<th>Hours</th>
+				<th></th>
+			</tr>
 			<tr th:each="currentEmp :  ${employees}" >
 				<td th:text="${currentEmp.id}" />
 				<td th:text="${currentEmp.firstName}" />

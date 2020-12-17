@@ -88,6 +88,4 @@ public class HiringManagerWebController {
 		return "HiringManagerEdit";
 	}
 	
-
-
 }

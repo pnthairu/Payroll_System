@@ -2,10 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="ISO-8859-1">
+	
+	<style>
+		body{
+			text-align: center;
+		}
+		div#header {
+		position: relative;
+		float: center;
+		}
+		
+		div#header h1 {
+		height: 80px;
+		line-height: 80px;
+		margin: 0;
+		padding-left: 10px;
+		background: #e0e0e0;
+		color: #292929;
+		text-align: center;
+		}
+		
+		a{
+			font-size: 25px;
+		}
+		
+	</style>
 </head>
 <body>
-	<a href="HRView">Hiring Manager</a><br />
-	<a href="managerView">Manager</a><br />
-	<a href="employeeView">Employee</a><br />
+	<div id="header">
+			<h1>EMPLOYEE LIST FORM</h1>
+		</div>
+	<a href="HRView">Hiring Manager</a><br /><br />
+	<a href="managerView">Manager</a><br /><br />
+	<a href="employeeView">Employee</a><br /><br />
 </body>
 </html>
