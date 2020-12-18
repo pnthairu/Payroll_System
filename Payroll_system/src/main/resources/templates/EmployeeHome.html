@@ -15,7 +15,11 @@
 		}
 		let salary = parseFloat(document.getElementById("salary").value);
 		let calculatedPay = hours * salary;
-		document.getElementById("calculatedPay").innerHTML = calculatedPay;
+		document.getElementById("calculatedPay").innerHTML = cdollarFormat(alculatedPay);
+	}
+	
+	function dollarFormat(inAmount) {
+		return new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(inAmount); 
 	}
 </script>
 
