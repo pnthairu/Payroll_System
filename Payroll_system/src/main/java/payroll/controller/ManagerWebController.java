@@ -32,7 +32,7 @@ public class ManagerWebController {
 	
 	
 	@GetMapping("/searchByDepartment/{id}")
-	public String searchByDepartment(@PathVariable("id") int id, Model model) {
+	public String searchByDepartment(@PathVariable("id") String id, Model model) {
 		model.addAttribute("employees", repo.searchByDepartment(id));
 		return "DepartmentByEmployees";
 	}

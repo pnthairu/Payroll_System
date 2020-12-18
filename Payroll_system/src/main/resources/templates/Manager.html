@@ -19,7 +19,7 @@
 		</tr>
 			<tr th:each="currentDepartment :  ${departments}" >
 				<td th:text="${currentDepartment.name}" />
-				<td><a th:href="@{/searchByDepartment/{id}(id=${currentDepartment.idDepartments})}">Select</a></td>
+				<td><a th:href="@{/searchByDepartment/{id}(id=${currentDepartment.name})}">Select</a></td>
 			</tr>
 		</table>
 	</form>	
